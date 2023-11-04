@@ -58,9 +58,9 @@ function displayCatInfo(catData) {
   showElement(catInfo);
 }
 
-function initializeApp() {
+async function initializeApp() {
   try {
-    fetchBreeds()
+   await fetchBreeds()
       .then(breeds => {
     const data = breeds.map(({ id, name }) => ({ text: name, value: id }));
     slimSelect.setData([{ placeholder: true, text: 'Search breeds' },...data]);    

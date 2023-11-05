@@ -1,10 +1,15 @@
+body {
+  margin-left: 60px;
+  
+}
+
 .spinner {
   transform: rotateZ(45deg);
   perspective: 1000px;
   border-radius: 50%;
-  width: 75px;
-  height: 75px;
-  color: #000000;
+  width: 100px;
+  height: 100px;
+  color:   #5b1092;
 }
 .spinner:before,
 .spinner:after {
@@ -20,7 +25,7 @@
   animation: 1s spin linear infinite;
 }
 .spinner:after {
-  color: #ff3d00;
+  color: #ffa500;
   transform: rotateY(70deg);
   animation-delay: 0.4s;
 }
@@ -72,12 +77,22 @@
 }
 
 .cat-img {
-  width: 30%;  
+  width: 30%;
+  border-radius: 10px;  
   margin: 20px 20px 0 0;
+  box-shadow: -5px -5px 10px #5b1092, 5px 5px 10px #ffd700;
+}
+
+.cat-info {
+  margin-top: 20px;
 }
 
 .wrapper {
   display: flex;
+}
+
+.wrapper div {
+  width: 500px;
 }
 
 .loader {

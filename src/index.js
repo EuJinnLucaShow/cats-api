@@ -9,6 +9,9 @@ const spinner = document.querySelector('.spinner');
 
 const slimSelect = new SlimSelect({
   select: select,  
+  settings: {    
+    placeholderText: 'Search breeds',
+  }  
 });
 
 const errorMessage = {
@@ -28,8 +31,7 @@ function hideElement(element) {
 
 async function handleBreedSelection() {
   try {
-    const selectedBreedId = select.value;
-    if (selectedBreedId === 'Search breeds') return;
+    const selectedBreedId = select.value;    
     hideElement(catInfo);
     showElement(spinner);
 
@@ -63,7 +65,7 @@ async function initializeApp() {
    await fetchBreeds()
       .then(breeds => {
     const data = breeds.map(({ id, name }) => ({ text: name, value: id }));
-    slimSelect.setData([{ placeholder: true, text: 'Search breeds' },...data]);    
+        slimSelect.setData([{ placeholder: true, text: ''}, ...data]);    
 })  
     select.addEventListener('change', handleBreedSelection);
   } catch (error) {

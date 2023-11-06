@@ -136,6 +136,12 @@ body {
   color: rgb(107, 106, 106);
 }
 
+.img-cat {
+  position: absolute;
+  bottom: 0;
+right: 0;
+}
+
 h2 {
   font-size: 36px;
   font-family: 'Agbalumo', sans-serif;

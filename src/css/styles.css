@@ -76,16 +76,19 @@ body {
 }
 
 .title {
+  font-family: 'Agbalumo', sans-serif; 
+  font-size: 48px;
+  margin: 0;
   display: flex;
   justify-content: center;
 }
 
-.span-cats {
+.span-cats {  
   color: #5b1092;
   margin-right: 10px;
 }
 
-.span-breeds {
+.span-breeds { 
   color: #ffbc05;
 }
 
@@ -121,4 +124,24 @@ body {
    margin-top: 20px;
    margin-left: auto;
    margin-right: auto;
+}
+
+.ss-option {
+  font-family: 'Agbalumo', sans-serif;  
+}
+
+.ss-single {
+  font-family: 'Agbalumo', sans-serif;
+  color: rgb(107, 106, 106);
+}
+
+h2 {
+  font-size: 36px;
+  font-family: 'Agbalumo', sans-serif;
+  margin: 10px 0;   
+}
+
+article {
+   font-family: Tahoma, sans-serif;
+   
 }

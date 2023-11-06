@@ -35,8 +35,8 @@ function displayCatInfo(catData) {
       <img class="cat-img" src="${catData[0].url}" alt="Cat Image"/>
       <div>
         <h2>${cat.name}</h2>
-        <p><b>Description:</b> ${cat.description}</p>
-        <p><b>Temperament:</b> ${cat.temperament}</p>
+        <article><b>Description:</b> ${cat.description}</article><br>
+        <article><b>Temperament:</b> ${cat.temperament}</article>
       </div>
     </div>
   `;

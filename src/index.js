@@ -16,7 +16,7 @@ const slimSelect = new SlimSelect({
 const errorMessage = {
   title: 'Error',
   message: '❌ Oops! Something went wrong! Try reloading the page!',
-  position: 'topCenter',
+  position: 'topRight',
   color: 'red',
 };
 

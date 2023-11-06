@@ -6,12 +6,11 @@ import 'izitoast/dist/css/iziToast.min.css';
 const select = document.getElementById('breed-select');
 const catInfo = document.querySelector('.cat-info');
 const spinner = document.querySelector('.spinner');
-
 const slimSelect = new SlimSelect({
-  select: select,  
-  settings: {    
+  select: select,
+  settings: {
     placeholderText: 'Search breeds',
-  }  
+  }
 });
 
 const errorMessage = {
@@ -22,27 +21,11 @@ const errorMessage = {
 };
 
 function showElement(element) {
-  element.style.display = 'block';
+  element.style.display = 'flex';
 }
 
 function hideElement(element) {
   element.style.display = 'none';
-}
-
-async function handleBreedSelection() {
-  try {
-    const selectedBreedId = select.value;    
-    hideElement(catInfo);
-    showElement(spinner);
-
-    const catData = await fetchCatByBreed(selectedBreedId);
-
-    displayCatInfo(catData);
-  } catch (error) {
-    iziToast.show(errorMessage);
-  }
-
-  hideElement(spinner);
 }
 
 function displayCatInfo(catData) {
@@ -60,19 +43,31 @@ function displayCatInfo(catData) {
   showElement(catInfo);
 }
 
+async function handleBreedSelection() {
+  try {
+    const selectedBreedId = select.value;
+    hideElement(catInfo);
+    showElement(spinner);
+    const catData = await fetchCatByBreed(selectedBreedId);
+    displayCatInfo(catData);
+  } catch (error) {
+    iziToast.show(errorMessage);
+  } finally {
+    hideElement(spinner);
+  }
+}
+
 async function initializeApp() {
   try {
-   await fetchBreeds()
-      .then(breeds => {
-    const data = breeds.map(({ id, name }) => ({ text: name, value: id }));
-        slimSelect.setData([{ placeholder: true, text: ''}, ...data]);    
-})  
+    const breeds = await fetchBreeds();
+    const breedOptions = breeds.map(({ id, name }) => ({ text: name, value: id }));
+    slimSelect.setData([{ placeholder: true, text: '' }, ...breedOptions]);
     select.addEventListener('change', handleBreedSelection);
   } catch (error) {
     iziToast.show(errorMessage);
+  } finally {
+    hideElement(spinner);
   }
-
-  hideElement(spinner);
 }
 
 initializeApp();

@@ -103,7 +103,7 @@ body {
   
 }
 
-.spinner {
+.spinner-wrapper {
   display: flex;
   justify-content: center;  
 }

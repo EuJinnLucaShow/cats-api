@@ -36,7 +36,9 @@ function displayCatInfo(catData) {
       <div>
         <h2>${cat.name}</h2>
         <article><b>Description:</b> ${cat.description}</article><br>
-        <article><b>Temperament:</b> ${cat.temperament}</article>
+        <article><b>Temperament:</b> ${cat.temperament}</article><br>
+        <article><b>Country:</b> ${cat.origin}</article>
+        <img src="https://flagsapi.com/${cat.country_code}/shiny/64.png" alt="country code"> 
       </div>
     </div>
   `;

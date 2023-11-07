@@ -2,6 +2,7 @@ import SlimSelect from 'slim-select';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import noFlag from './image/flag_of_none.svg'
 
 const select = document.getElementById('breed-select');
 const catInfo = document.querySelector('.cat-info');
@@ -29,7 +30,7 @@ function hideElement(element) {
 }
 
 function displayCatInfo(catData) {
-  const cat = catData[0].breeds[0];
+  const cat = catData[0].breeds[0]; 
   catInfo.innerHTML = `
     <div class="wrapper">
       <img class="cat-img" src="${catData[0].url}" alt="Cat Image"/>
@@ -38,7 +39,7 @@ function displayCatInfo(catData) {
         <article><b>Description:</b> ${cat.description}</article><br>
         <article><b>Temperament:</b> ${cat.temperament}</article><br>
         <article><b>Country:</b> ${cat.origin}</article>
-        <img src="https://flagsapi.com/${cat.country_code}/shiny/64.png" alt="country code"> 
+        <img class="country-flag" src="https://flagsapi.com/${cat.country_code}/shiny/64.png" onerror="src='${noFlag}'" width="64px" alt="country flag"> 
       </div>
     </div>
   `;

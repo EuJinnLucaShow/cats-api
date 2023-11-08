@@ -94,6 +94,7 @@ body {
 
 .cat-img {
   width: 30%;
+  object-fit: cover;
   border-radius: 10px;  
   margin: 20px 20px 0 0;
   box-shadow: -5px -5px 10px #5b1092, 5px 5px 10px #ffbc05;

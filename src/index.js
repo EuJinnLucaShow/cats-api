@@ -1,5 +1,5 @@
 import SlimSelect from 'slim-select';
-import { fetchBreeds, fetchCatByBreed } from './js/cat-api.js';
+import { fetchBreeds, fetchCatByBreed } from './js/api.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import noImage from './image/no_image.png'

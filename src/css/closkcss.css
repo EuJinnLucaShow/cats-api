@@ -51,8 +51,8 @@ body {
 		inset 0 15px 15px rgba(0, 0, 0, 0.3);
 	transition: all ease 0.2s;
     position: fixed;
-    top: 1%;
-    left: 1%;
+    top: 10px;
+    left: 10px;
 }
 .clock:before {
 	content: "";
@@ -108,17 +108,18 @@ body {
 	border-radius: 2px;
 }
 
-/* Style for theme switch btn */
-.switch-cont {
-	margin: 2em auto;
-	/* position: absolute; */
-	bottom: 0;
+
+.switch-cont {	
+	position: absolute;
+	top: 150px;
+	left: 40px;
 }
 .switch-cont .switch-btn {
 	font-family: monospace;
 	text-transform: uppercase;
 	outline: none;
-	padding: 0.5rem 1rem;
+	width: 70px;
+	padding: 8px 16px;
 	background-color: var(--main-bg-color);
 	color: var(--main-text-color);
 	border: 1px solid var(--main-text-color);

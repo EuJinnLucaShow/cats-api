@@ -110,7 +110,7 @@ body {
 
 
 .switch-cont {	
-	position: absolute;
+	position: fixed;
 	top: 150px;
 	left: 40px;
 }

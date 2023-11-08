@@ -24,6 +24,7 @@ body {
 	/* position: relative; */
 	transition: all ease 0.2s;
 }
+
 .page-header {
 	font-size: 2rem;
 	color: var(--main-text-color);
@@ -41,7 +42,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--main-bg-color);
-	background-image: url("https://imvpn22.github.io/analog-clock/clock.png");
+	background-image: url("../image/clock.png");
 	background-position: center center;
 	background-size: cover;
 	border-radius: 50%;

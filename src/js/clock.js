@@ -14,9 +14,7 @@ const setClock = () => {
 	sec.style.transform = `rotateZ(${ss}deg)`;
 };
 
-// first time
 setClock();
-// Update every 1000 ms
 setInterval(setClock, 1000);
 
 const switchTheme = (evt) => {
@@ -27,18 +25,18 @@ const switchTheme = (evt) => {
 		document.documentElement.setAttribute("data-theme", "dark");
 	} else {
 		switchBtn.textContent = "light";
-		localStorage.setItem("theme", "light"); //add this
+		localStorage.setItem("theme", "light"); 
 		document.documentElement.setAttribute("data-theme", "light");
 	}
 };
 
 const switchModeBtn = document.querySelector(".switch-btn");
-switchModeBtn.addEventListener("click", switchTheme, false);
+switchModeBtn.addEventListener("click", switchTheme);
 
-let currentTheme = "dark";
+let currentTheme = "light";
 currentTheme = localStorage.getItem("theme")
 	? localStorage.getItem("theme")
-	: null;
+	: "light";
 
 if (currentTheme) {
 	document.documentElement.setAttribute("data-theme", currentTheme);
